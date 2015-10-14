@@ -493,7 +493,7 @@ function colormag_breaking_news() {
    ) );
 ?>
    <div class="breaking-news">
-      <strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
+<!--      <strong class="breaking-news-latest">--><?php //_e( 'Latest:', 'colormag' ); ?><!--</strong>-->
       <ul class="newsticker">
       <?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
          <li>
