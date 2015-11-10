@@ -26,7 +26,7 @@ define('DB_NAME', 'hamovn_v2');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'adminhamovn@2015');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -87,3 +87,4 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+define( 'FS_METHOD', 'direct' );
