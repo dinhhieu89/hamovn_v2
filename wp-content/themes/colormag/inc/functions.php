@@ -453,7 +453,7 @@ function colormag_footer_copyright() {
 
    $tg_link =  '<a href="http://themegrill.com/themes/colormag" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'colormag' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'colormag') .'</span></a>';
 
-   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ).'<br>'.sprintf( __( 'Theme: %1$s by %2$s.', 'colormag' ), 'ColorMag', $tg_link ).' '.sprintf( __( 'Powered by %s.', 'colormag' ), $wp_link );
+   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link );
 
    $colormag_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
    echo $colormag_footer_copyright;
@@ -493,7 +493,6 @@ function colormag_breaking_news() {
    ) );
 ?>
    <div class="breaking-news">
-      <strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
       <ul class="newsticker">
       <?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
          <li>
