@@ -49,6 +49,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1 =
+* Added rel="nofollow" on the Advertisement widgets.
+* Updated FontAwesome icons to the latest version 4.4.0
+* Updated HTML5Shiv script to the latest version 3.7.3
+
 = Version 1.0.9 =
 * Minor CSS Bug Fix
 * Russian language file added. Thanks to Mr. Ardizan Натяжные потолки for providing the language files.

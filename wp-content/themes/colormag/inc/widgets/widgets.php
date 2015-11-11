@@ -861,7 +861,7 @@ class colormag_300x250_advertisement_widget extends WP_Widget {
             if ( !empty( $image_url ) ) {
                $output .= '<div class="advertisement-content">';
                if ( !empty( $image_link ) ) {
-               $output .= '<a href="'.$image_link.'" class="single_ad_300x250" target="_blank">
+               $output .= '<a href="'.$image_link.'" class="single_ad_300x250" target="_blank" rel="nofollow">
                                     <img src="'.$image_url.'" width="300" height="250">
                            </a>';
                } else {
@@ -963,7 +963,7 @@ class colormag_728x90_advertisement_widget extends WP_Widget {
             if ( !empty( $image_url ) ) {
                $output .= '<div class="advertisement-content">';
                if ( !empty( $image_link ) ) {
-               $output .= '<a href="'.$image_link.'" class="single_ad_728x90" target="_blank">
+               $output .= '<a href="'.$image_link.'" class="single_ad_728x90" target="_blank" rel="nofollow">
                                     <img src="'.$image_url.'" width="728" height="90">
                            </a>';
                } else {
@@ -1079,7 +1079,7 @@ class colormag_125x125_advertisement_widget extends WP_Widget {
                $j = $i - 1;
                if( !empty( $image_array[$j] ) ) {
                   if ( !empty( $link_array[$j] ) ) {
-                     $output .= '<a href="'.$link_array[$j].'" class="single_ad_125x125" target="_blank">
+                     $output .= '<a href="'.$link_array[$j].'" class="single_ad_125x125" target="_blank" rel="nofollow">
                                  <img src="'.$image_array[$j].'" width="125" height="125">
                               </a>';
                   } else {
