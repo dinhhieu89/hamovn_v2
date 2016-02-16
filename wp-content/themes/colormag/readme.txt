@@ -49,6 +49,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.1 =
+* Language POT file updated
+* SEO optimization
+
 = Version 1.1 =
 * Added rel="nofollow" on the Advertisement widgets.
 * Updated FontAwesome icons to the latest version 4.4.0

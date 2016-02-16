@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ColorMag\n"
-"POT-Creation-Date: 2015-06-05 21:37+0545\n"
-"PO-Revision-Date: 2015-06-05 21:37+0545\n"
-"Last-Translator: ThemeGrill <themegrill@gmail.com>\n"
+"POT-Creation-Date: 2015-11-06 11:27+0545\n"
+"PO-Revision-Date: 2015-11-06 11:28+0545\n"
+"Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -456,110 +456,118 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: inc/functions.php:247 inc/related-posts.php:33 inc/widgets/widgets.php:313
-#: inc/widgets/widgets.php:439 inc/widgets/widgets.php:589
-#: inc/widgets/widgets.php:746
+#: inc/customizer.php:852
+msgid "Theme Info"
+msgstr ""
+
+#: inc/customizer.php:853
+msgid "View PRO version"
+msgstr ""
+
+#: inc/functions.php:252 inc/related-posts.php:33 inc/widgets/widgets.php:313
+#: inc/widgets/widgets.php:439 inc/widgets/widgets.php:590
+#: inc/widgets/widgets.php:748
 #, php-format
 msgid ""
 "<span class=\"posted-on\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark"
 "\"><i class=\"fa fa-calendar-o\"></i> %3$s</a></span>"
 msgstr ""
 
-#: inc/functions.php:257
+#: inc/functions.php:262
 msgid "<i class=\"fa fa-comment\"></i> 0 Comment"
 msgstr ""
 
-#: inc/functions.php:257
+#: inc/functions.php:262
 msgid "<i class=\"fa fa-comment\"></i> 1 Comment"
 msgstr ""
 
-#: inc/functions.php:257
+#: inc/functions.php:262
 msgid "<i class=\"fa fa-comments\"></i> % Comments"
 msgstr ""
 
-#: inc/functions.php:259
+#: inc/functions.php:264
 msgid ", "
 msgstr ""
 
-#: inc/functions.php:262
+#: inc/functions.php:267
 msgid "Edit"
 msgstr ""
 
-#: inc/functions.php:356
+#: inc/functions.php:361
 msgid "Post navigation"
 msgstr ""
 
-#: inc/functions.php:360 navigation.php:44
+#: inc/functions.php:365 navigation.php:44
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr ""
 
-#: inc/functions.php:361 navigation.php:45
+#: inc/functions.php:366 navigation.php:45
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: inc/functions.php:366
+#: inc/functions.php:371
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/functions.php:370
+#: inc/functions.php:375
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/functions.php:396
+#: inc/functions.php:401
 msgid "Pingback:"
 msgstr ""
 
-#: inc/functions.php:396
+#: inc/functions.php:401
 msgid "(Edit)"
 msgstr ""
 
-#: inc/functions.php:411
+#: inc/functions.php:416
 msgid "Post author"
 msgstr ""
 
-#: inc/functions.php:414
+#: inc/functions.php:419
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/functions.php:422
+#: inc/functions.php:427
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/functions.php:427
+#: inc/functions.php:432
 msgid "Reply"
 msgstr ""
 
-#: inc/functions.php:447
+#: inc/functions.php:452
 msgid "WordPress"
 msgstr ""
 
-#: inc/functions.php:449
+#: inc/functions.php:454
 msgid "ThemeGrill"
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:456
 #, php-format
 msgid "Copyright &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:456
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/functions.php:451
+#: inc/functions.php:456
 #, php-format
 msgid "Powered by %s."
 msgstr ""
 
-#: inc/functions.php:491
+#: inc/functions.php:496
 msgid "Latest:"
 msgstr ""
 
-#: inc/functions.php:536
+#: inc/functions.php:541
 msgid "View a random post"
 msgstr ""
 
@@ -687,105 +695,120 @@ msgstr ""
 msgid "Shows widgets at footer sidebar four."
 msgstr ""
 
-#: inc/widgets/widgets.php:212 inc/widgets/widgets.php:342
-#: inc/widgets/widgets.php:468 inc/widgets/widgets.php:625
-msgid "Display latest posts or posts of specific category"
+#: inc/widgets/widgets.php:212
+msgid ""
+"Display latest posts or posts of specific category, which will be used as "
+"the slider."
 msgstr ""
 
 #: inc/widgets/widgets.php:214
-msgid "TG: Featured Cat Slider"
+msgid "TG: Featured Category Slider"
 msgstr ""
 
 #: inc/widgets/widgets.php:227 inc/widgets/widgets.php:357
-#: inc/widgets/widgets.php:494 inc/widgets/widgets.php:651
+#: inc/widgets/widgets.php:495 inc/widgets/widgets.php:653
 msgid "Number of posts to display:"
 msgstr ""
 
 #: inc/widgets/widgets.php:231 inc/widgets/widgets.php:361
-#: inc/widgets/widgets.php:498 inc/widgets/widgets.php:655
+#: inc/widgets/widgets.php:499 inc/widgets/widgets.php:657
 msgid "Show latest Posts"
 msgstr ""
 
 #: inc/widgets/widgets.php:232 inc/widgets/widgets.php:362
-#: inc/widgets/widgets.php:499 inc/widgets/widgets.php:656
+#: inc/widgets/widgets.php:500 inc/widgets/widgets.php:658
 msgid "Show posts from a category"
 msgstr ""
 
 #: inc/widgets/widgets.php:235 inc/widgets/widgets.php:365
-#: inc/widgets/widgets.php:502 inc/widgets/widgets.php:659
+#: inc/widgets/widgets.php:503 inc/widgets/widgets.php:661
 msgid "Select category"
+msgstr ""
+
+#: inc/widgets/widgets.php:342
+msgid ""
+"Display latest posts or posts of specific category. Suitable for the Area "
+"Beside Slider Sidebar."
 msgstr ""
 
 #: inc/widgets/widgets.php:344
 msgid "TG: Highligted Posts"
 msgstr ""
 
-#: inc/widgets/widgets.php:470
-msgid "TG: Featured Posts"
+#: inc/widgets/widgets.php:468 inc/widgets/widgets.php:626
+msgid "Display latest posts or posts of specific category."
 msgstr ""
 
-#: inc/widgets/widgets.php:488 inc/widgets/widgets.php:645
-#: inc/widgets/widgets.php:802 inc/widgets/widgets.php:903
-#: inc/widgets/widgets.php:1005
+#: inc/widgets/widgets.php:470
+msgid "TG: Featured Posts (Style 1)"
+msgstr ""
+
+#: inc/widgets/widgets.php:486 inc/widgets/widgets.php:644
+msgid "Layout will be as below:"
+msgstr ""
+
+#: inc/widgets/widgets.php:489 inc/widgets/widgets.php:647
+#: inc/widgets/widgets.php:804 inc/widgets/widgets.php:905
+#: inc/widgets/widgets.php:1007
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widgets.php:491 inc/widgets/widgets.php:648
+#: inc/widgets/widgets.php:492 inc/widgets/widgets.php:650
 msgid "Description"
 msgstr ""
 
-#: inc/widgets/widgets.php:627
-msgid "TG: Featured Posts Vertical"
-msgstr ""
-
-#: inc/widgets/widgets.php:784
-msgid "Add your 300x250 Advertisement here"
+#: inc/widgets/widgets.php:628
+msgid "TG: Featured Posts (Style 2)"
 msgstr ""
 
 #: inc/widgets/widgets.php:786
+msgid "Add your 300x250 Advertisement here"
+msgstr ""
+
+#: inc/widgets/widgets.php:788
 msgid "TG: 300x250 Advertisement"
 msgstr ""
 
-#: inc/widgets/widgets.php:805
+#: inc/widgets/widgets.php:807
 msgid "Add your Advertisement 300x250 Images Here"
 msgstr ""
 
-#: inc/widgets/widgets.php:807 inc/widgets/widgets.php:908
-#: inc/widgets/widgets.php:1015
+#: inc/widgets/widgets.php:809 inc/widgets/widgets.php:910
+#: inc/widgets/widgets.php:1017
 msgid "Advertisement Image Link "
 msgstr ""
 
-#: inc/widgets/widgets.php:811 inc/widgets/widgets.php:912
-#: inc/widgets/widgets.php:1019
+#: inc/widgets/widgets.php:813 inc/widgets/widgets.php:914
+#: inc/widgets/widgets.php:1021
 msgid "Advertisement Image "
 msgstr ""
 
-#: inc/widgets/widgets.php:821 inc/widgets/widgets.php:922
-#: inc/widgets/widgets.php:1029
+#: inc/widgets/widgets.php:823 inc/widgets/widgets.php:924
+#: inc/widgets/widgets.php:1031
 msgid "Upload Image"
 msgstr ""
 
-#: inc/widgets/widgets.php:885
+#: inc/widgets/widgets.php:887
 msgid "Add your 728x90 Advertisement here"
 msgstr ""
 
-#: inc/widgets/widgets.php:887
+#: inc/widgets/widgets.php:889
 msgid "TG: 728x90 Advertisement"
 msgstr ""
 
-#: inc/widgets/widgets.php:906
+#: inc/widgets/widgets.php:908
 msgid "Add your Advertisement 728x90 Images Here"
 msgstr ""
 
-#: inc/widgets/widgets.php:987
+#: inc/widgets/widgets.php:989
 msgid "Add your 125x125 Advertisement here"
 msgstr ""
 
-#: inc/widgets/widgets.php:989
+#: inc/widgets/widgets.php:991
 msgid "TG: 125x125 Advertisement"
 msgstr ""
 
-#: inc/widgets/widgets.php:1008
+#: inc/widgets/widgets.php:1010
 msgid "Add your Advertisement 125x125 Images Here"
 msgstr ""
 
@@ -813,6 +836,11 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
+msgstr ""
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
 #: searchform.php:12

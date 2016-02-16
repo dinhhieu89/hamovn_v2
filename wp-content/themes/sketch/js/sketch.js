@@ -8,11 +8,11 @@
 			directionNav: true,
 			carousel: false,
 			itemMargin: 0,
-			itemWidth: 1092,
+			itemWidth: 1092
 		} );
 
 		$(window).on( 'resize', $( '.flex-viewport-wrapper' ).flexslider() );
-		
+
 		/**
 		 * Disable default click behavior in
 		 * More Projects list on

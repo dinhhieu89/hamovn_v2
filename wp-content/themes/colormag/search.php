@@ -16,6 +16,10 @@
 		<div id="content" class="clearfix">
 			<?php if ( have_posts() ) : ?>
 
+            <header class="page-header">
+               <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'colormag' ), get_search_query() ); ?></h1>
+            </header><!-- .page-header -->
+
 				<div class="article-container">
 
                <?php global $post_i; $post_i = 1; ?>

@@ -31,7 +31,7 @@ function sketch_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( function_exists( 'has_site_logo' ) && has_site_logo() ) {
+	if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 		$classes[] = 'has-site-logo';
 	}
 

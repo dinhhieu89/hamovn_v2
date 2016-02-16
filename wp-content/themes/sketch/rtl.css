@@ -10,8 +10,6 @@ caption, th, td, th {
 
 /* Text meant only for screen readers */
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	right: 24px;
 	left: auto;

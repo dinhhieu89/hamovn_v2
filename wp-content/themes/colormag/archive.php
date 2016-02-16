@@ -22,7 +22,7 @@
                   do_action('colormag_category_title');
                   single_cat_title();
                   } else { ?>
-					<h3 class="page-title">
+					<h1 class="page-title">
                <span>
 						<?php
 							if ( is_tag() ) :
@@ -69,7 +69,7 @@
 
 							endif;
 						?>
-					</span></h3>
+					</span></h1>
                   <?php } ?>
 					<?php
 						// Show an optional term description.

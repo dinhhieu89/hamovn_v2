@@ -24,9 +24,9 @@
       <?php colormag_colored_category(); ?>
 
       <header class="entry-header">
-         <h1 class="entry-title">
+         <h2 class="entry-title">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-         </h1>
+         </h2>
       </header>
 
       <?php colormag_entry_meta(); ?>

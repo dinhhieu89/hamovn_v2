@@ -1,0 +1,49 @@
+#wrapper {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.control-label {
+    margin-top: 20px;
+}
+
+.form-control {
+    margin-top: 20px;
+}
+
+h1.title {
+    color: blue;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-create {
+    margin-top: 30px;
+    float: right;
+}
+
+.title-wrap {
+    text-align: center;
+}
+
+label.file {
+    margin-top: 15px !important;
+}
+
+.file-custom:after {
+    content: attr(data-after);
+}
+
+#guide-audio, #guide-video {
+    position: fixed;
+    top: 0;
+    padding-top: 10px;
+    width: 80%;
+    background: #818a91;
+    text-align: center;
+    z-index: 99;
+    height: 100%;
+}

@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">																						<h3 style="position: absolute;top: 0px; left: -9999px;"><a href="http://www.stimol.ru/" title="депрессия">stimol.ru</a>.</h3>
+		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 

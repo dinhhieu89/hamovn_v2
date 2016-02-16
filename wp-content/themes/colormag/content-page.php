@@ -12,9 +12,15 @@
 	<?php do_action( 'colormag_before_post_content' ); ?>
 
 	<header class="entry-header">
-		<h1 class="entry-title">
-			<?php the_title(); ?>
-		</h1>
+      <?php if ( is_front_page() ) : ?>
+   		<h2 class="entry-title">
+   			<?php the_title(); ?>
+   		</h2>
+      <?php else : ?>
+         <h1 class="entry-title">
+            <?php the_title(); ?>
+         </h1>
+      <?php endif; ?>
 	</header>
 
 	<div class="entry-content clearfix">

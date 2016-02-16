@@ -21,7 +21,7 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			
+
 			<div class="portfolio-projects">
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'portfolio' ); ?>
 
 				<?php endwhile; ?>
-				
+
 				<?php sketch_paging_nav(); ?>
 
 			</div><!-- .projects -->

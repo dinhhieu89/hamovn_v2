@@ -207,11 +207,11 @@ endif;
 function sketch_post_format() {
 	$format = get_post_format();
 	$formats = get_theme_support( 'post-formats' );
-	
+
 	//If the post has no format, or if it's not a format supported by the theme, return
 	if ( ! $format || ! has_post_format( $formats[0] ) )
 		return;
-	
+
 	printf( '<a class="entry-format" href="%1$s" title="%2$s">%3$s</a><span class="sep"> | </span>',
 				esc_url( get_post_format_link( $format ) ),
 				esc_attr( sprintf( __( 'All %s posts', 'sketch' ), get_post_format_string( $format ) ) ),

@@ -2,7 +2,7 @@
 /**
  * @package Sketch
  */
- 
+
 $thumbsize = sketch_post_thumbnail_class();
 ?>
 

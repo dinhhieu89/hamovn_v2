@@ -358,7 +358,7 @@ function colormag_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'colormag' ); ?></h1>
+		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'colormag' ); ?></h3>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -453,7 +453,7 @@ function colormag_footer_copyright() {
 
    $tg_link =  '<a href="http://themegrill.com/themes/colormag" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'colormag' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'colormag') .'</span></a>';
 
-   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link );
+   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ).'<br>'.sprintf( __( 'Theme: %1$s by %2$s.', 'colormag' ), 'ColorMag', $tg_link ).' '.sprintf( __( 'Powered by %s.', 'colormag' ), $wp_link );
 
    $colormag_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
    echo $colormag_footer_copyright;
@@ -493,6 +493,7 @@ function colormag_breaking_news() {
    ) );
 ?>
    <div class="breaking-news">
+      <strong class="breaking-news-latest"><?php _e( 'Latest:', 'colormag' ); ?></strong>
       <ul class="newsticker">
       <?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post(); ?>
          <li>
@@ -647,9 +648,9 @@ function colormag_colored_category_title($title) {
    $color_value = colormag_category_color(get_cat_id($title));
    $color_border_value = colormag_category_color(get_cat_id($title));
    if ( !empty($color_value) ) {
-      return '<h3 class="page-title" style="border-bottom-color: '.$color_border_value.'">'.'<span style="background-color: '.$color_value.'">'.$title.'</span></h3>';
+      return '<h1 class="page-title" style="border-bottom-color: '.$color_border_value.'">'.'<span style="background-color: '.$color_value.'">'.$title.'</span></h1>';
    } else {
-      return '<h3 class="page-title"><span>'.$title.'</span></h3>';
+      return '<h1 class="page-title"><span>'.$title.'</span></h1>';
    }
 }
 function colormag_category_title_function($category_title) {

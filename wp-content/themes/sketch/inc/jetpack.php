@@ -17,6 +17,7 @@ function sketch_jetpack_setup() {
         'posts_per_page' => 9,
 		'footer'         => 'page',
 		'render'         => 'sketch_infinite_scroll_render',
+		'wrapper'        => false,
 	) );
 
 	add_theme_support( 'featured-content', array(
@@ -38,7 +39,7 @@ function sketch_jetpack_setup() {
     /**
      * Add theme support for site logos
      */
-     add_theme_support( 'site-logo', array( 'sketch-site-logo' ) );
+     add_theme_support( 'site-logo', array( 'size' => 'sketch-site-logo' ) );
 }
 add_action( 'after_setup_theme', 'sketch_jetpack_setup' );
 
@@ -51,7 +52,7 @@ add_action( 'after_setup_theme', 'sketch_jetpack_setup' );
 function sketch_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		
+
 		if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
 			get_template_part( 'content', 'portfolio' );
 		} else {

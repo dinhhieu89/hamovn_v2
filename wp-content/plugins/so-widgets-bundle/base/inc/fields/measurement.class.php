@@ -11,9 +11,41 @@ class SiteOrigin_Widget_Field_Measurement extends SiteOrigin_Widget_Field_Text_I
 		return $input_classes;
 	}
 
+	/**
+	 * Parse a value into a unit and value.
+	 *
+	 * @param $value
+	 *
+	 * @return array
+	 */
+	protected function get_render_values( $value ) {
+		preg_match('/(\d+)([a-z%]+)*/', $value, $matches);
+		$num_matches = count( $matches );
+		$val = array();
+		$val['value'] = $num_matches > 1 ? $matches[1] : null;
+		$val['unit'] = $num_matches > 2 ? $matches[2] : null;
+		return $val;
+	}
+
+	protected function render_field( $value, $instance ) {
+		$value_parts = $this->get_render_values($value);
+		parent::render_field( $value_parts['value'], $instance );
+	}
+
 	protected function render_after_field( $value, $instance ) {
-		$unit_name = $this->get_unit_field_name( $this->base_name );
-		$unit = ! empty( $instance[ $unit_name ] ) ? $instance[ $unit_name ] : '';
+		$value_parts = $this->get_render_values($value);
+		$unit = $value_parts['unit'];
+		if ( is_null( $unit ) ) {
+			$unit_name = $this->get_unit_field_name( $this->base_name );
+
+			if( !empty( $instance[ $unit_name ] ) ) {
+				$unit = $instance[ $unit_name ];
+			}
+			else if ( isset( $this->default ) ) {
+				$default_parts = $this->get_render_values($this->default);
+				$unit = $default_parts['unit'];
+			}
+		}
 		?>
 		<select class="sow-measurement-select-unit"
 				name="<?php echo esc_attr( $this->for_widget->so_get_field_name( $this->base_name . '_unit', $this->parent_container ) ) ?>">
@@ -31,26 +63,34 @@ class SiteOrigin_Widget_Field_Measurement extends SiteOrigin_Widget_Field_Text_I
 		wp_enqueue_style( 'so-measurement-field', plugin_dir_url(__FILE__) . 'css/so-measurement-field.css', array(), SOW_BUNDLE_VERSION );
 	}
 
-
-	protected function sanitize_field_input( $value ) {
-		return ( $value === '' ) ? false : (float) $value;
-	}
-
-	public function sanitize_instance( $instance ) {
+	// This is doing sanitization and is being used to concatenate the numeric measurement value and the selected
+	// measurement unit.
+	protected function sanitize_field_input( $value, $instance ) {
+		//Get the property name of the unit field
 		$unit_name = $this->get_unit_field_name( $this->base_name );
-		if( ! empty( $instance[ $unit_name ] ) ) {
+
+		//Initialize with default value, if any.
+		$default_parts = $this->get_render_values($this->default);
+		$unit = $default_parts['unit'];
+		if( isset( $instance[ $unit_name ] ) ) {
 			$units = siteorigin_widgets_get_measurements_list();
-			$instance[ $unit_name ] = in_array( $instance[ $unit_name ], $units ) ? $instance[ $unit_name ] : 'px';
-			esc_url_raw( $instance[ $unit_name ] );
+			if ( in_array( $instance[ $unit_name ], $units ) ) {
+				$unit = $instance[ $unit_name ];
+			}
+			unset( $instance[ $unit_name ] );
 		}
-		return $instance;
+
+		$value = ( $value === '' ) ? false : (float) $value;
+		$value .= $unit;
+		return $value;
 	}
 
+	// Get the name of the dropdown field rendered to allow the user to select a measurement unit.
 	public function get_unit_field_name( $base_name ) {
 		$v_name = $base_name;
 		if( strpos($v_name, '][') !== false ) {
 			// Remove this splitter
-			$v_name = substr( $v_name, strpos($v_name, '][') + 2 );
+			$v_name = substr( $v_name, strrpos($v_name, '][') + 2 );
 		}
 		return $v_name . '_unit';
 	}
