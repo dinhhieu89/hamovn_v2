@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*
 Whois.php        PHP classes to conduct whois queries
 

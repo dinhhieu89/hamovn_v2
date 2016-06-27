@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*
 Controller name: Widgets
 Controller description: Retrieve sidebar widgets
