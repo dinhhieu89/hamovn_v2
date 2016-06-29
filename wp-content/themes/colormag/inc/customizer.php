@@ -17,22 +17,26 @@ function colormag_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
-               'documentation' => array(
-               'link' => esc_url('http://themegrill.com/theme-instruction/colormag/'),
-               'text' => __('Documentation', 'colormag'),
+            'theme-info' => array(
+               'link' => esc_url('http://themegrill.com/themes/colormag/'),
+               'text' => __('Theme Info', 'colormag'),
             ),
-               'support' => array(
+            'support' => array(
                'link' => esc_url('http://themegrill.com/support-forum/'),
                'text' => __('Support', 'colormag'),
             ),
-               'demo' => array(
+            'documentation' => array(
+               'link' => esc_url('http://themegrill.com/theme-instruction/colormag/'),
+               'text' => __('Documentation', 'colormag'),
+            ),
+            'demo' => array(
                'link' => esc_url('http://demo.themegrill.com/colormag/'),
                'text' => __('View Demo', 'colormag'),
             ),
-               'rating' => array(
-               'link' => esc_url('https://wordpress.org/support/view/theme-reviews/colormag'),
-               'text' => __('Rate This Theme', 'colormag'),
-            )
+            'rating' => array(
+               'link' => esc_url('http://wordpress.org/support/view/theme-reviews/colormag?filter=5'),
+               'text' => __('Rate this theme', 'colormag'),
+            ),
          );
          foreach ($important_links as $important_link) {
             echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
@@ -42,8 +46,8 @@ function colormag_customize_register($wp_customize) {
    }
 
    $wp_customize->add_section('colormag_important_links', array(
-      'priority' => 700,
-      'title' => __('ColorMag Theme Important Links', 'colormag'),
+      'priority' => 1,
+      'title' => __('ColorMag Important Links', 'colormag'),
    ));
 
    /**
@@ -849,9 +853,46 @@ function colormag_customizer_js() {
 
    wp_localize_script( 'colormag_customizer_script', 'colormag_customizer_obj', array(
 
-      'info' => __( 'Theme Info', 'colormag' ),
       'pro' => __('View PRO version','colormag')
 
    ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'colormag_customizer_js' );
+
+/*
+ * Custom Scripts
+ */
+add_action( 'customize_controls_print_footer_scripts', 'colormag_customizer_custom_scripts' );
+
+function colormag_customizer_custom_scripts() { ?>
+<style>
+	/* Theme Instructions Panel CSS */
+	li#accordion-section-colormag_important_links h3.accordion-section-title, li#accordion-section-colormag_important_links h3.accordion-section-title:focus { background-color: #289DCC !important; color: #fff !important; }
+	li#accordion-section-colormag_important_links h3.accordion-section-title:hover { background-color: #289DCC !important; color: #fff !important; }
+	li#accordion-section-colormag_important_links h3.accordion-section-title:after { color: #fff !important; }
+	/* Upsell button CSS */
+	.themegrill-pro-info,
+	.customize-control-colormag-important-links a {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+		background: #008EC2;
+		color: #fff;
+		display: block;
+		margin: 15px 0 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	.customize-control-colormag-important-links a{
+		padding: 8px 0;
+	}
+
+	.themegrill-pro-info:hover,
+	.customize-control-colormag-important-links a:hover {
+		color: #ffffff;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+		background:#2380BA;
+	}
+</style>
+<?php
+}

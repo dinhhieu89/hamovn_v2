@@ -12,6 +12,32 @@
  * @since ColorMag 1.0
  */
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+   $content_width = 800;
+
+/**
+ * $content_width global variable adjustment as per layout option.
+ */
+function colormag_content_width() {
+   global $post;
+   global $content_width;
+
+   if( $post ) { $layout_meta = get_post_meta( $post->ID, 'colormag_page_layout', true ); }
+   if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
+   $colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
+
+   if( $layout_meta == 'default_layout' ) {
+      if ( $colormag_default_layout == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
+      else { $content_width = 800; /* pixels */ }
+   }
+   elseif ( $layout_meta == 'no_sidebar_full_width' ) { $content_width = 1140; /* pixels */ }
+   else { $content_width = 800; /* pixels */ }
+}
+add_action( 'template_redirect', 'colormag_content_width' );
+
 add_action( 'after_setup_theme', 'colormag_setup' );
 /**
  * All setup functionalities.
@@ -20,13 +46,6 @@ add_action( 'after_setup_theme', 'colormag_setup' );
  */
 if( !function_exists( 'colormag_setup' ) ) :
 function colormag_setup() {
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	global $content_width;
-	if ( ! isset( $content_width ) )
-		$content_width = 660;
 
 	/*
 	 * Make theme available for translation.
@@ -75,6 +94,9 @@ function colormag_setup() {
    add_theme_support('html5', array(
        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
    ));
+
+   // adding the WooCommerce plugin support
+   add_theme_support( 'woocommerce' );
 }
 endif;
 
@@ -121,4 +143,19 @@ require_once( COLORMAG_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( COLORMAG_WIDGETS_DIR . '/widgets.php' );
 
+/**
+ * Detect plugin. For use on Front End only.
+ */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+/**
+ * Assign the ColorMag version to a variable.
+ */
+$theme            = wp_get_theme( 'colormag' );
+$colormag_version = $theme['Version'];
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-colormag-admin.php';
+}
 ?>

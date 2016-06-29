@@ -48,7 +48,19 @@ and we will include it within the theme from next version update.
 
 /**********************************************************/
 
-== CHANGE LOG ==
+== Changelog ==
+= Version 1.1.4 =
+* Tweaks - Updated theme tags as per new introduced tags.
+* Tweaks - Introduced welcome page for theme.
+
+= Version 1.1.3 =
+* Theme information is properly organized in Customize panel.
+* Theme is now compatible with WooCommerce.
+
+= Version 1.1.2 =
+* Updated FontAwesome icons to version 4.5.0
+* Content width is now adjusted according to the layout chooded.
+
 = Version 1.1.1 =
 * Language POT file updated
 * SEO optimization

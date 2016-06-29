@@ -207,8 +207,8 @@ function colormag_sidebar_select() {
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$colormag_default_layout = get_theme_mod( 'colormag_default_layout', 'right_sidebar' );
 
-	$colormag_default_page_layout = get_theme_mod( 'colormag_pages_default_layout', 'right_sidebar' );
-	$colormag_default_post_layout = get_theme_mod( 'colormag_single_posts_default_layout', 'right_sidebar' );
+   $colormag_default_page_layout = get_theme_mod( 'colormag_default_page_layout', 'right_sidebar' );
+   $colormag_default_post_layout = get_theme_mod( 'colormag_default_single_posts_layout', 'right_sidebar' );
 
 	if( $layout_meta == 'default_layout' ) {
 		if( is_page() ) {
@@ -453,7 +453,7 @@ function colormag_footer_copyright() {
 
    $tg_link =  '<a href="http://themegrill.com/themes/colormag" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'colormag' ).'" rel="designer"><span>'.__( 'ThemeGrill', 'colormag') .'</span></a>';
 
-   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link );
+   $default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s. All rights reserved.', 'colormag' ), date( 'Y' ), $site_link ).'<br>'.sprintf( __( 'Theme: %1$s by %2$s.', 'colormag' ), 'ColorMag', $tg_link ).' '.sprintf( __( 'Powered by %s.', 'colormag' ), $wp_link );
 
    $colormag_footer_copyright = '<div class="copyright">'.$default_footer_value.'</div>';
    echo $colormag_footer_copyright;
@@ -657,4 +657,26 @@ function colormag_category_title_function($category_title) {
    add_filter('single_cat_title', 'colormag_colored_category_title');
 }
 add_action('colormag_category_title','colormag_category_title_function');
+
+/**************************************************************************************/
+
+/**
+ * Making the theme Woocommrece compatible
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+add_action('woocommerce_before_main_content', 'colormag_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'colormag_wrapper_end', 10);
+
+function colormag_wrapper_start() {
+  echo '<div id="primary">';
+}
+
+function colormag_wrapper_end() {
+  echo '</div>';
+}
 ?>
